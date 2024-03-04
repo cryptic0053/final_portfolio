@@ -1,0 +1,54 @@
+﻿@model List<Skill>
+<section id="skill">
+    <h1 class="sub-heading">Skills</h1>
+    
+    <div class="divider"></div>
+
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a asp-controller="Skill" asp-action="Create" style="text-decoration: none; color: #007BFF; font-weight: bold; border-bottom: 2px solid #007BFF; transition: border-bottom 0.3s;">
+            Create Skill
+        </a>
+    }
+   
+
+
+
+    <p class="sub-para">I have acquired proficiency in various programming languages and web development technologies, including HTML, CSS, JavaScript,C,C++ etc. With hands-on experience and a strong foundation in these areas, I am equipped to tackle a wide range of web development projects.</p>
+    
+    <div class="skill-row">
+        @foreach(var skill in Model)
+        {
+            <div class="skill-box">
+                <div class="skill-info">
+                    <h2>@skill.Name</h2>
+                    <h2>@skill.Level</h2>
+                </div>
+                <div class="skill-outer-line">
+                    <div class="skill-inner-line" style="width: @skill.Level%;"></div>
+                </div>
+            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div style="margin-bottom: 25px">
+                    <a asp-route-id="@skill.Id" asp-controller="Skill" asp-action="Edit" style="text-decoration: none; color: #007bff; padding: 5px 10px; border: 1px solid #007bff; border-radius: 5px; background-color: #f8f9fa; margin-right: 10px;">Edit</a>
+                    <span>|</span>
+                    <a asp-route-id="@skill.Id" asp-controller="Skill" asp-action="Delete" style="text-decoration: none; color: #dc3545; padding: 5px 10px; border: 1px solid #dc3545; border-radius: 5px; background-color: #f8f9fa;">Delete</a>
+                </div>
+            }
+            
+        }
+        
+
+
+        
+       
+        
+       
+        
+        
+       
+
+    </div>
+</section>

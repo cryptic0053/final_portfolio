@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - final_portfolio</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/final_portfolio.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+
+        <div class="profile">
+            <img src="image/img.jpg" alt="" width="150px">
+            <h1>Anirban Argha</h1>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=100011839549718&mibextid=ZbWKwL"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/_the__cryptic_/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/anirban-argha-4a20b7278/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/cryptic0053"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index" class="active"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a asp-controller="About" asp-action="Index" ><i class="fa-solid fa-user"></i>About</a></li>
+                <li><a asp-controller="Skill" asp-action="Index"><i class="fa-solid fa-cogs"></i>Skill</a></li>
+                <li><a asp-controller="Education" asp-action="Index" ><i class="fa-solid fa-book"></i>Education</a></li>
+                <li><a asp-controller="Projects" asp-action="Index" ><i class="fa-solid fa-project-diagram"></i>Projects</a></li>
+                <li><a asp-controller="Contact" asp-action="Index" ><i class="fa-solid fa-envelope"></i>Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <i class="fa-solid fa-bars" id="MenuBtn"></i>
+    <main>
+        <section id="home">
+            <div class="home-row">
+                <h1>Hi,This is <br>Anirban Argha<span>.</span></h1>
+                <p>I'm a <span class="auto-input"></span></p>
+            </div>
+        </section>
+        @RenderBody()
+    </main>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://kit.fontawesome.com/aa5f332820.js" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
